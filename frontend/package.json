@@ -30,10 +30,6 @@
 			"react-app/jest"
 		]
 	},
-	"repository": {
-		"type": "git",
-		"url": "git@github.com:chengkangzhu/Lookscout.git"
-	},
 	"browserslist": {
 		"production": [
 			">0.2%",
