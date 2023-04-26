@@ -607,6 +607,7 @@ body .subdescription {
 #cta-section .cta-container h2 {
   max-width: 576px;
   color: white;
+  text-align: left;
 }
 #cta-section .cta-container p {
   max-width: 576px;

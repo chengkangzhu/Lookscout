@@ -512,7 +512,6 @@ body {
 
 	.cta-container {
 		display: flex;
-		// flex-wrap: wrap;
 		gap: 80px;
 		align-items: center;
 		justify-content: center;
@@ -527,8 +526,10 @@ body {
 			}
 		}
 		h2 {
+
 			max-width: 576px;
 			color: white;
+			text-align: left;
 		}
 
 		p {
