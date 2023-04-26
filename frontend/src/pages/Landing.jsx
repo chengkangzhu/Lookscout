@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 //img
 import heroGgLaptop from "../img/hero-img/heroBg-laptop.png";
@@ -36,7 +37,22 @@ import productIcon1 from "../img/product-img/product-icon-1.png";
 import productIcon2 from "../img/product-img/product-icon-2.png";
 import productIcon3 from "../img/product-img/product-icon-3.png";
 
+//package
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Landing = () => {
+	useEffect(() => {
+		AOS.init({ duration:1000 });
+		AOS.refresh();
+	}, []);
+
+	const handleScrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: "instant",
+		});
+	};
 	return (
 		<div id="landing">
 			<section id="hero-section">
@@ -45,7 +61,7 @@ const Landing = () => {
 					src={heroGgLaptop}
 					alt="landing background image"
 				/>
-				<div className="hero-block">
+				<div className="hero-block" data-aos="fade">
 					<div className="hero-block__star-container">
 						<AiFillStar />
 						<AiFillStar />
@@ -62,12 +78,24 @@ const Landing = () => {
 						decided to build upon it - successfully.
 					</p>
 					<div className="hero-block__cta-btn-container">
-						<button className="button--blue">Get Started</button>
-						<button className="button--grey">Contact Us</button>
+						<Link
+							to="/pricing"
+							onClick={handleScrollToTop}
+							className="button button--blue"
+						>
+							Get Started
+						</Link>
+						<Link
+							to="/helpAndSupport"
+							onClick={handleScrollToTop}
+							className="button button--grey"
+						>
+							Contact Us
+						</Link>
 					</div>
 				</div>
 			</section>
-			<section id="about-section">
+			<section id="about-section" data-aos="fade">
 				<h2 className="subheading">Work Easier Today</h2>
 				<p className="container subdescription">
 					Leverage agile frameworks to provide a robust synopsis for
@@ -119,13 +147,18 @@ const Landing = () => {
 				</div>
 			</section>
 			<section id="product-features-section">
-				<h2 className="subheading">Redefining Product Features</h2>
-				<p className="container subdescription">
+				<h2 className="subheading" data-aos="fade-up">
+					Redefining Product Features
+				</h2>
+				<p className="container subdescription" data-aos="fade-up">
 					Keeping your eye on the ball while performing a deep dive on
 					the start-up mentality to derive convergence on
 					cross-platform integration.
 				</p>
-				<div className="pdt-feature-container container">
+				<div
+					className="pdt-feature-container container"
+					data-aos="fade-up"
+				>
 					<table>
 						<tbody>
 							<FeatureBlock
@@ -156,11 +189,12 @@ const Landing = () => {
 			<section id="cta-section">
 				<div className="container cta-container">
 					<img
+						data-aos="fade-up"
 						className="cta-img"
 						src={ctaDataLaptop}
 						alt="cta image"
 					/>
-					<div className="cta-content-container">
+					<div className="cta-content-container" data-aos="fade-up">
 						<h2 className="subheading">
 							Demonstrate branding consequently think outside the
 							box and beyond
@@ -184,34 +218,47 @@ const Landing = () => {
 								success team
 							</li>
 						</ul>
-						<button className="button--blue">
+						<Link
+							to="/pricing"
+							onClick={handleScrollToTop}
+							className="button button--blue"
+						>
 							Start now <AiOutlineArrowRight size={20} />
-						</button>
+						</Link>
 					</div>
 				</div>
 			</section>
 			<section id="customer-section">
-				<h2 className="subheading">Proud to Be Used By</h2>
-				<p className="container subdescription">
+				<h2 className="subheading" data-aos="fade-up">
+					{" "}
+					Proud to Be Used By
+				</h2>
+				<p className="container subdescription" data-aos="fade-up">
 					Professionally cultivate one-to-one customer service with
 					robust ideas. Dynamically innovate resource-leveling
 					customer service for state of the art customer service.
 				</p>
 				<div className="customer-img-wrapper">
-					<img src={customerLogoImg} alt="customer logo" />
+					<img
+						src={customerLogoImg}
+						alt="customer logo"
+						data-aos="fade-up"
+					/>
 				</div>
-				<a href="#">
+				<Link to="/pricing" onClick={handleScrollToTop}>
 					Show more <AiOutlineArrowRight size={20} />
-				</a>
+				</Link>
 			</section>
 			<section id="price-section">
-				<h2 className="subheading">Pricing that Adapts to You</h2>
-				<p className="container  subdescription">
+				<h2 className="subheading" data-aos="fade-up">
+					Pricing that Adapts to You
+				</h2>
+				<p className="container  subdescription" data-aos="fade-up">
 					Keeping your eye on the ball while performing a deep dive on
 					the start-up mentality to derive convergence on integration.
 					Collaboratively administrate markets via networks.{" "}
 				</p>
-				<div className="price-container container">
+				<div className="price-container container" data-aos="fade-up">
 					<div className="price-block">
 						<span>Basic</span>
 						<h4>Basic Package</h4>
@@ -248,9 +295,13 @@ const Landing = () => {
 								Amplifying stakeholder{" "}
 							</li>
 						</ul>
-						<button className="button--blue">
+						<Link
+							to="/pricing"
+							className="button w-100 d-block button--blue"
+							onClick={handleScrollToTop}
+						>
 							Try now <AiOutlineArrowRight size={20} />
-						</button>
+						</Link>
 					</div>
 					<div className="price-block">
 						<span>Advanced</span>
@@ -288,9 +339,13 @@ const Landing = () => {
 								Amplifying stakeholder{" "}
 							</li>
 						</ul>
-						<button className="button--blue">
+						<Link
+							to="/pricing"
+							className="button w-100 d-block button--blue"
+							onClick={handleScrollToTop}
+						>
 							Try now <AiOutlineArrowRight size={20} />
-						</button>
+						</Link>
 					</div>
 					<div className="price-block">
 						<span>Elite</span>
@@ -328,21 +383,27 @@ const Landing = () => {
 								Amplifying stakeholder{" "}
 							</li>
 						</ul>
-						<button className="button--blue">
+						<Link
+							to="/pricing"
+							className="button w-100 d-block button--blue"
+							onClick={handleScrollToTop}
+						>
 							Try now <AiOutlineArrowRight size={20} />
-						</button>
+						</Link>
 					</div>
 				</div>
 			</section>
 
 			<section id="blog-section">
-				<h2 className="subheading">Latest Blog Posts</h2>
-				<p className="container  subdescription">
+				<h2 className="subheading" data-aos="fade-up">
+					Latest Blog Posts
+				</h2>
+				<p className="container  subdescription" data-aos="fade-up">
 					Completely synergize resource taxing relationships via
 					premier niche markets. Professionally cultivate one-to-one
 					customer service with robust ideas.
 				</p>
-				<div className="container blog-container">
+				<div className="container blog-container" data-aos="fade-up">
 					<div className="blog-top">
 						<img src={BlogImg1Laptop} alt="blog top image" />
 						<h3>Reach your users with new tools.</h3>
@@ -407,8 +468,8 @@ const Landing = () => {
 
 			<section id="promo-section">
 				<div className="container promo-container">
-					<div className="promo-info-container">
-						<h2 >
+					<div className="promo-info-container" data-aos="fade-up">
+						<h2>
 							Welcome to your new digital reality that will rock
 							your world.
 						</h2>
@@ -418,7 +479,7 @@ const Landing = () => {
 							trial lets you test our product today.
 						</p>
 					</div>
-					<div className="email-form">
+					<div className="email-form" data-aos="fade-up">
 						<input type="email" placeholder="Enter your email" />
 						<button className="button--blue">Submit</button>
 					</div>

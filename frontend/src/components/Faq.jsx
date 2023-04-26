@@ -1,8 +1,16 @@
-import React from "react";
+import React ,{useEffect} from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Faq = () => {
+
+	useEffect(() => {
+		AOS.init({ duration:1000 });
+		AOS.refresh();
+	}, []);
+	
 	return (
-		<div class="accordion" id="faq-section">
+		<div class="accordion" id="faq-section"  data-aos="fade-up">
 			<div class="accordion-item accordion-item-head">
 				<h2 className="faq-head">
 					Authentification Issues

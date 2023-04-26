@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 //image
 import heroAvatar from "../img/hs-img/hero-avatar.png";
@@ -196,8 +197,8 @@ const HelpAndSupport = () => {
 				<div className="auth-container container">
 					<h2>Welcome to your new digital reality, now. Wow.</h2>
 					<div className="button-container">
-						<button className="button--blue">Sign up</button>
-						<button className="button--grey">Log in</button>
+						<Link to="/signup" className="button button--blue">Sign up</Link>
+						<Link to="/login" className="button button--grey">Log in</Link>
 					</div>
 				</div>
 			</section>

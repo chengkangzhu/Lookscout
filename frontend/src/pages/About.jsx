@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 //compoennt
 import Faq from "../components/Faq";
@@ -24,6 +24,10 @@ import teamMember1 from "../img/about-team-img/member1.png";
 import teamMember2 from "../img/about-team-img/member2.png";
 import teamMember3 from "../img/about-team-img/member3.png";
 
+
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const SocialMediaIcons = () => {
 	return (
 		<div className="social-icons">
@@ -44,9 +48,15 @@ const SocialMediaIcons = () => {
 };
 
 const About = () => {
+
+	useEffect(() => {
+		AOS.init({ duration:1000 });
+		AOS.refresh();
+	}, []);
+	
 	return (
 		<div id="about-page">
-			<section className="about-hero-section">
+			<section className="about-hero-section" data-aos="fade">
 				<a href="#">1% OF THE INDUSTRY</a>
 				<h1>Hype got you here. Stay for the support.</h1>
 				<p>
@@ -55,7 +65,7 @@ const About = () => {
 					build upon it - successfully.
 				</p>
 			</section>
-			<section className="about-message-section container">
+			<section className="about-message-section container" data-aos="fade">
 				<h2 className="subheading">Messaging for all</h2>
 				<p className="subdescription">
 					User generated content in real-time will have multiple
@@ -93,7 +103,7 @@ const About = () => {
 			</section>
 
 			<section className="container about-brand-section">
-				<div className="brand-info-wrapper">
+				<div className="brand-info-wrapper"  data-aos="fade-up">
 					<h2>Demonstrate branding consequently think outside</h2>
 					<p>
 						Velit purus egestas tellus phasellus. Mattis eget sed
@@ -117,20 +127,20 @@ const About = () => {
 						Start now <AiOutlineArrowRight size={20} />
 					</button>
 				</div>
-				<img
+				<img data-aos="fade-up"
 					className="brand-img"
 					src={brandImgLaptop}
 					alt="brand image"
 				/>
 			</section>
-			<section className="container about-team-section">
-				<h2 className="subheading">The Core of Our Team</h2>
-				<p className=" subdescription">
+			<section className="container about-team-section" >
+				<h2 className="subheading"  data-aos="fade-up">The Core of Our Team</h2>
+				<p className=" subdescription"  data-aos="fade-up">
 					Organically grow the holistic world view of disruptive
 					innovation via workplace diversity and empowerment of people
 					and great talent that truly rocks.
 				</p>
-				<div className="team-member-container">
+				<div className="team-member-container"  data-aos="fade-up">
 					<div className="team-member">
 						<img src={teamMember1} alt=" img of team member 1" />
 						<h3>Morgan Drew</h3>
@@ -152,8 +162,8 @@ const About = () => {
 				</div>
 			</section>
 			<section className="about-faq-section container">
-				<h2 className="subheading">Frequently asked questions</h2>
-				<p className=" subdescription">
+				<h2 className="subheading"  data-aos="fade-up">Frequently asked questions</h2>
+				<p className=" subdescription" data-aos="fade-up">
 					Lorem Ipsum is simply dummy text of the printing and
 					typesetting industry. Lorem Ipsum has been the industry's
 					standard dummy text ever since the 1500s,
@@ -161,7 +171,7 @@ const About = () => {
 				<Faq />
 			</section>
 			<section className="about-auth-section">
-				<div className=" auth-content-container">
+				<div className=" auth-content-container" data-aos="fade-up">
 					<a href="#">1% OF THE INDUSTRY</a>
 					<h1>
 						Welcome to your new digital reality that which will rock
@@ -172,7 +182,7 @@ const About = () => {
 						<button className="button--blue">Log In</button>
 					</div>
 				</div>
-				<div className="logo-container container">
+				<div className="logo-container container" data-aos="fade-up">
 					<img src={comLogo1} alt="testminal " />
 					<img src={comLogo2} alt="testminal " />
 					<img src={comLogo3} alt="testminal " />

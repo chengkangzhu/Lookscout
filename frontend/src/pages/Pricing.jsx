@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-
+import React, { useState ,useEffect} from "react";
+import { Link } from "react-router-dom";
 
 //icons
 import { BsFillCheckCircleFill } from "react-icons/bs";
@@ -17,6 +17,11 @@ import productLaptop from "../img/price-product-img/productLaptop.png";
 import customer1 from "../img/price-customer/avatar (1).png";
 import customer2 from "../img/price-customer/avatar (2).png";
 import customer3 from "../img/price-customer/avatar (3).png";
+
+
+//package
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const CustomerBlock = (props) => {
 	return (
@@ -41,6 +46,11 @@ const CustomerBlock = (props) => {
 };
 
 const Price = () => {
+	useEffect(() => {
+		AOS.init({ duration:1000 });
+		AOS.refresh();
+	}, []);
+
 	const [monthOrYear, setMonthOrYear] = useState("month");
 
 	const handleButtonClick = (buttonType) => {
@@ -51,15 +61,15 @@ const Price = () => {
 		<div>
 			<section className="price-hero-section">
 				<hr />
-				<h1>Hype got you here. Stay for the support.</h1>
-				<p>
+				<h1 data-aos="fade">Hype got you here. Stay for the support.</h1>
+				<p data-aos="fade">
 					We’ve been told it is possible to revolutionize the payment
 					industry. We have not reinvented the wheel, we decided to
 					build upon it - successfully.
 				</p>
 			</section>
 			<section className="price-price-section">
-				<div className="price-button-container ">
+				<div className="price-button-container "data-aos="fade">
 					<button
 						className={`button--transparent month${
 							monthOrYear === "month" ? " active" : ""
@@ -77,7 +87,7 @@ const Price = () => {
 						Yearly
 					</button>
 				</div>
-				<div className="price-block-container">
+				<div className="price-block-container" data-aos="fade">
 					<div className="price-block">
 						<h5>
 							<span className="price">{monthOrYear === 'year' ? '$' + (25 * 11) : '$25'}</span>/{monthOrYear}
@@ -168,7 +178,7 @@ const Price = () => {
 				</div>
 			</section>
 			<section className="price-about-section">
-				<div className="about-container container">
+				<div className="about-container container" data-aos="fade-up">
 					<div className="about-block">
 						<img src={aboutIcon1} alt="pirce about icon" />
 						<h3>Easier Work Organization</h3>
@@ -207,14 +217,14 @@ const Price = () => {
 				</div>
 			</section>
 			<section className="price-product-section">
-				<h2 className="subheading">Redefining Product Features</h2>
-				<p className="subdescription">
+				<h2 className="subheading"  data-aos="fade-up">Redefining Product Features</h2>
+				<p className="subdescription"  data-aos="fade-up">
 					Keeping your eye on the ball while performing a deep dive on
 					the start-up mentality to derive convergence on
 					cross-platform integration.
 				</p>
 				<div className="product-content-container container">
-					<div className="product-info-container">
+					<div className="product-info-container"  data-aos="fade-up">
 						<a href="#">1% OF THE INDUSTRY</a>
 						<h2>
 							Demonstrate branding consequently think outside the
@@ -230,7 +240,7 @@ const Price = () => {
 							Start now <AiOutlineArrowRight size={20} />
 						</button>
 					</div>
-					<img
+					<img data-aos="fade-up"
 						className="product-img"
 						src={productLaptop}
 						alt="product image"
@@ -238,8 +248,8 @@ const Price = () => {
 				</div>
 			</section>
 			<section className="price-customers">
-				<h2 className="subheading">What Our Customers Say</h2>
-				<div className="customer-container container">
+				<h2 className="subheading"  data-aos="fade-up">What Our Customers Say</h2>
+				<div className="customer-container container"  data-aos="fade-up">
 					<CustomerBlock
 						content="It fits our needs perfectly. It is definitely worth the investment. Your company is upstanding with and is behind its product 100%."
 						name="Dave Jones"
@@ -261,11 +271,11 @@ const Price = () => {
 				</div>
 			</section>
 			<section className="price-signup-section">
-				<div className="signup-container container">
+				<div className="signup-container container"  data-aos="fade-up">
 					<h2>Welcome to your new digital reality, now. Wow.</h2>
 					<div className="button-container">
-						<button className="button--blue">Sign up</button>
-						<button className="button--grey">Log in</button>
+						<Link to="/signup" className="button button--blue">Sign up</Link>
+						<Link to="/login" className="button button--grey">Log in</Link>
 					</div>
 				</div>
 			</section>
