@@ -285,6 +285,7 @@ body .subdescription {
     display: none;
     position: relative;
     width: 90vw;
+    max-width: 550px;
     top: 0;
   }
   #header .resource-popup-menu .popup-block {

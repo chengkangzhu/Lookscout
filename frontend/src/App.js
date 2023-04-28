@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+	useNavigate,
+} from "react-router-dom";
 
 //page
 import Landing from "./pages/Landing";
@@ -8,18 +13,18 @@ import Pricing from "./pages/Pricing";
 import HelpAndSupport from "./pages/HelpAndSupport";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import ForgotPassword from "./pages/ForgotPassword"
+import ForgotPassword from "./pages/ForgotPassword";
 
 //commponents
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-//logo 
+//logo
 
 function App() {
 	return (
-		<Router forceRefresh={true}>
-			<Navbar/>
+		<Router basename="/Lookscout">
+			<Navbar />
 			<Routes>
 				<Route path="/" exact element={<Landing />} />
 				<Route path="/about" element={<About />} />
