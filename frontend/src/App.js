@@ -18,7 +18,7 @@ import Footer from "./components/Footer";
 
 function App() {
 	return (
-		<Router>
+		<Router forceRefresh={true}>
 			<Navbar/>
 			<Routes>
 				<Route path="/" exact element={<Landing />} />
