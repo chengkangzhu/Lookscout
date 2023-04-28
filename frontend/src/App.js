@@ -23,7 +23,7 @@ import Footer from "./components/Footer";
 
 function App() {
 	return (
-		<Router>
+		<Router basename="/">
 			<Navbar />
 			<Routes>
 				<Route path="/" exact element={<Landing />} />
