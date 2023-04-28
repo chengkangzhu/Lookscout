@@ -23,7 +23,7 @@ import Footer from "./components/Footer";
 
 function App() {
 	return (
-		<Router basename="https://lookscout-chengkangzhu.onrender.com/">
+		<Router>
 			<Navbar />
 			<Routes>
 				<Route path="/" exact element={<Landing />} />
