@@ -3,7 +3,6 @@ import {
 	BrowserRouter as Router,
 	Routes,
 	Route,
-	useNavigate,
 } from "react-router-dom";
 
 //page
@@ -23,10 +22,10 @@ import Footer from "./components/Footer";
 
 function App() {
 	return (
-		<Router basename="/">
+		<Router >
 			<Navbar />
 			<Routes>
-				<Route path="/" exact element={<Landing />} />
+				<Route path="/" element={<Landing />} />
 				<Route path="/about" element={<About />} />
 				<Route path="/pricing" element={<Pricing />} />
 				<Route path="/helpAndSupport" element={<HelpAndSupport />} />
