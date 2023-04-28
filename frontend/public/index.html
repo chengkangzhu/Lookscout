@@ -39,6 +39,13 @@
 		/>
 
 		<base href="/" />
+		<script>
+			// Retrieve the stored path and navigate to it
+			const redirectPath = localStorage.getItem("redirectPath");
+			if (redirectPath && redirectPath !== "/") {
+				window.location.replace(redirectPath);
+			}
+		</script>
 		<title>LookScout</title>
 	</head>
 	<body>

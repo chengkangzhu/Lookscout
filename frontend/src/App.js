@@ -1,8 +1,8 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import {
 	BrowserRouter as Router,
 	Routes,
-	Route,
+	Route
 } from "react-router-dom";
 
 //page
@@ -21,8 +21,10 @@ import Footer from "./components/Footer";
 //log
 
 function App() {
+
+
 	return (
-		<Router >
+		<Router>
 			<Navbar />
 			<Routes>
 				<Route path="/" element={<Landing />} />
