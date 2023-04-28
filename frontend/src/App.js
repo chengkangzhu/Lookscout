@@ -4,7 +4,6 @@ import {
 	Routes,
 	Route,
 } from "react-router-dom";
-import { createBrowserHistory } from 'history';
 
 //page
 import Landing from "./pages/Landing";
@@ -19,12 +18,11 @@ import ForgotPassword from "./pages/ForgotPassword";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-//logo
-const history = createBrowserHistory();
+//log
 
 function App() {
 	return (
-		<Router history={history}>
+		<Router >
 			<Navbar />
 			<Routes>
 				<Route path="/" element={<Landing />} />
