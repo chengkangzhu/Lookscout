@@ -4,6 +4,7 @@ import {
 	Routes,
 	Route,
 } from "react-router-dom";
+import { createBrowserHistory } from 'history';
 
 //page
 import Landing from "./pages/Landing";
@@ -19,10 +20,11 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 //logo
+const history = createBrowserHistory();
 
 function App() {
 	return (
-		<Router >
+		<Router history={history}>
 			<Navbar />
 			<Routes>
 				<Route path="/" element={<Landing />} />
